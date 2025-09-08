@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zakaria El Ghoul Portfolio</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.21.4/babel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const languages = {
+            en: {
+                heroSlides: [
+                    { title: "Unreal Engine Game Jam", desc: "My first game jam project.", img: "img/gamejamgame.gif" },
+                    { title: "Shader Study", desc: "Exploring shaders.", img: "img/Shader.gif" },
+                    { title: "Sword Scroller", desc: "2D sword platformer.", img: "img/SwordScroller.gif" },
+                    { title: "VR Painting", desc: "Immersive VR art experience.", img: "img/VrPainting.gif" }
+                ],
+                aboutTitle: "About Me",
+                aboutText: "Hi! I'm Zakaria, a 21-year-old passionate game developer. I love creating games and exploring new tech.",
+                projectsTitle: "My Projects",
+                contactTitle: "Contact Me",
+                contactText: "Reach out via social media or email. Let's build something amazing!"
+            },
+            fr: { heroSlides: [{ title: "Unreal Engine Game Jam", desc: "Mon premier projet de game jam.", img: "img/gamejamgame.gif" }, { title: "Shader Study", desc: "Exploration des shaders.", img: "img/Shader.gif" }, { title: "Sword Scroller", desc: "Plateforme 2D avec épée.", img: "img/SwordScroller.gif" }, { title: "VR Painting", desc: "Expérience artistique immersive en VR.", img: "img/VrPainting.gif" }], aboutTitle: "À Propos", aboutText: "Salut! Je suis Zakaria, développeur de jeux passionné de 21 ans. J'adore créer des jeux et explorer de nouvelles technologies.", projectsTitle: "Mes Projets", contactTitle: "Contactez-moi", contactText: "Contactez-moi via les réseaux sociaux ou email. Créons quelque chose d'incroyable!" },
+            nl: { heroSlides: [{ title: "Unreal Engine Game Jam", desc: "Mijn eerste game jam project.", img: "img/gamejamgame.gif" }, { title: "Shader Study", desc: "Shaders verkennen.", img: "img/Shader.gif" }, { title: "Sword Scroller", desc: "2D zwaard platformer.", img: "img/SwordScroller.gif" }, { title: "VR Painting", desc: "Immersieve VR kunstervaring.", img: "img/VrPainting.gif" }], aboutTitle: "Over Mij", aboutText: "Hoi! Ik ben Zakaria, een 21-jarige gepassioneerde game developer. Ik maak graag games en ontdek nieuwe technologieën.", projectsTitle: "Mijn Projecten", contactTitle: "Contact", contactText: "Neem contact op via social media of email. Laten we iets geweldigs bouwen!" },
+            es: { heroSlides: [{ title: "Unreal Engine Game Jam", desc: "Mi primer proyecto de game jam.", img: "img/gamejamgame.gif" }, { title: "Shader Study", desc: "Explorando shaders.", img: "img/Shader.gif" }, { title: "Sword Scroller", desc: "Plataforma 2D con espada.", img: "img/SwordScroller.gif" }, { title: "VR Painting", desc: "Experiencia artística inmersiva en VR.", img: "img/VrPainting.gif" }], aboutTitle: "Sobre Mí", aboutText: "¡Hola! Soy Zakaria, un desarrollador de juegos de 21 años apasionado. Me encanta crear juegos y explorar nuevas tecnologías.", projectsTitle: "Mis Proyectos", contactTitle: "Contáctame", contactText: "Contáctame a través de redes sociales o correo. ¡Hagamos algo increíble!" }
+        };
+
+        function Navbar({ lang, setLang }) {
+            const [hidden, setHidden] = React.useState(false);
+            const [menuOpen, setMenuOpen] = React.useState(false);
+            const lastScrollY = React.useRef(0);
+
+            React.useEffect(() => {
+                const handleScroll = () => {
+                    const currentScrollY = window.scrollY;
+                    setHidden(currentScrollY > lastScrollY.current && currentScrollY > 80);
+                    lastScrollY.current = currentScrollY;
+                };
+                window.addEventListener("scroll", handleScroll);
+                return () => window.removeEventListener("scroll", handleScroll);
+            }, []);
+
+            const closeMenu = () => setMenuOpen(false);
+
+            return (
+                <>
+                    <nav className={hidden ? "hidden" : ""}>
+                        <h1>Zakaria El Ghoul Aadi</h1>
+                        <div className="nav-right">
+                            <div className="nav-links">
+                                <a href="#home">Home</a>
+                                <a href="#about">About</a>
+                                <a href="#projects">Projects</a>
+                                <a href="#contact">Contact</a>
+                            </div>
+                            <select className="nav-lang" value={lang} onChange={e => setLang(e.target.value)}>
+                                {Object.keys(languages).map(l => <option key={l} value={l}>{l.toUpperCase()}</option>)}
+                            </select>
+                            <div className="burger" onClick={() => setMenuOpen(!menuOpen)}>
+                                <i className="fas fa-bars"></i>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <div className={`burger-menu ${menuOpen ? "open" : ""}`}>
+                        <a href="#home" onClick={closeMenu}>Home</a>
+                        <a href="#about" onClick={closeMenu}>About</a>
+                        <a href="#projects" onClick={closeMenu}>Projects</a>
+                        <a href="#contact" onClick={closeMenu}>Contact</a>
+                        <select value={lang} onChange={e => setLang(e.target.value)}>
+                            {Object.keys(languages).map(l => <option key={l} value={l}>{l.toUpperCase()}</option>)}
+                        </select>
+                    </div>
+                </>
+            );
+        }
+
+        function HeroCarousel({ slides }) {
+            const [current, setCurrent] = React.useState(0);
+            React.useEffect(() => {
+                const interval = setInterval(() => setCurrent(prev => (prev + 1) % slides.length), 5000);
+                return () => clearInterval(interval);
+            }, [slides.length]);
+
+            return (
+                <section id="home">
+                    <div id="particles-js"></div>
+                    {slides.map((slide, i) => (
+                        <div key={i} style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", transition: "opacity 1s", opacity: i === current ? 1 : 0 }}>
+                            <img src={slide.img} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                            <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", background: "rgba(0,0,0,0.4)", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "1rem" }}>
+                                <h1>{slide.title}</h1>
+                                <p>{slide.desc}</p>
+                                <button className="btn">COMING SOON</button>
+                            </div>
+                        </div>
+                    ))}
+                    <button className="arrow-btn" style={{ left: "1rem" }} onClick={() => setCurrent((current - 1 + slides.length) % slides.length)}><i className="fas fa-chevron-left"></i></button>
+                    <button className="arrow-btn" style={{ right: "1rem" }} onClick={() => setCurrent((current + 1) % slides.length)}><i className="fas fa-chevron-right"></i></button>
+                    <div style={{ position: "absolute", bottom: "1rem", width: "100%", display: "flex", justifyContent: "center", gap: ".5rem" }}>
+                        {slides.map((_, i) => <span key={i} className={`carousel-dot ${i === current ? "active" : ""}`} onClick={() => setCurrent(i)}></span>)}
+                    </div>
+                </section>
+            );
+        }
+
+        function AboutMe({ lang }) {
+            return (
+                <section id="about" style={{ flexDirection: "column", gap: "2rem" }}>
+                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem" }}>
+                        <h2>{languages[lang].aboutTitle}</h2>
+                        <img src="img/Zaka.png" alt="Zakaria" style={{ borderRadius: "50%", width: "200px", height: "200px" }} />
+                        <p>{languages[lang].aboutText}</p>
+                        <button className="btn">COMING SOON</button>
+                    </div>
+                </section>
+            );
+        }
+
+        function Projects({ lang }) {
+            const projects = [
+                { title: "Game Jam", desc: "Unreal Engine game jam project", img: "img/dummy_1920x1080_ffffff_000000.png", link: "#" },
+                { title: "Shader Study", desc: "Real-time shader experiments", img: "img/dummy_1920x1080_ffffff_000000.png", link: "#" },
+                { title: "Sword Scroller", desc: "2D sword platformer", img: "img/dummy_1920x1080_ffffff_000000.png", link: "#" }
+            ];
+
+            React.useEffect(() => {
+                const cards = document.querySelectorAll('.card');
+                const obs = new IntersectionObserver(entries => {
+                    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+                }, { threshold: 0.2 });
+                cards.forEach(c => obs.observe(c));
+                return () => obs.disconnect();
+            }, []);
+
+            return (
+                <section id="projects" style={{ flexDirection: "column", gap: "2rem" }}>
+                    <h2>{languages[lang].projectsTitle}</h2>
+                    <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "1rem" }}>
+                        {projects.map((p, i) => (
+                            <div key={i} className="card" style={{ width: "300px", position: "relative" }}>
+                                <a href={p.link}><img src={p.img} alt={p.title} style={{ width: "100%", borderRadius: "1rem" }} /></a>
+                                <h3>{p.title}</h3>
+                                <p>{p.desc}</p>
+                                <button className="btn">COMING SOON</button>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            );
+        }
+
+        function Contact({ lang }) {
+            return (
+                <section id="contact" style={{ flexDirection: "column", gap: "1rem", textAlign: "center" }}>
+                    <h2>{languages[lang].contactTitle}</h2>
+                    <p>{languages[lang].contactText}</p>
+                    <div style={{ display: "flex", justifyContent: "center", gap: "1rem" }}>
+                        <a href="#" className="social-icon"><i className="fab fa-instagram"></i></a>
+                        <a href="#" className="social-icon"><i className="fab fa-linkedin"></i></a>
+                        <a href="#" className="social-icon"><i className="fab fa-github"></i></a>
+                        <a href="#" className="social-icon"><i className="fas fa-envelope"></i></a>
+                    </div>
+                </section>
+            );
+        }
+
+        function App() {
+            const [lang, setLang] = React.useState("en");
+            React.useEffect(() => {
+                particlesJS("particles-js", { particles: { number: { value: 80 }, color: { value: "#58a6ff" }, shape: { type: 'circle', stroke: { width: 0, color: '#58a6ff' } }, opacity: { value: 1 }, size: { value: 3 }, line_linked: { enable: true, distance: 150, color: '#58a6ff', opacity: 0.4, width: 1 }, move: { enable: true, speed: 1 } } });
+            }, []);
+            return (
+                <>
+                    <Navbar lang={lang} setLang={setLang} />
+                    <HeroCarousel slides={languages[lang].heroSlides} />
+                    <AboutMe lang={lang} />
+                    <Projects lang={lang} />
+                    <Contact lang={lang} />
+                </>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+</body>
+</html>
