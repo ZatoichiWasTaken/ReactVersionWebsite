@@ -1,0 +1,31 @@
+{
+  "en": {
+    "heroSlides": [
+      { "title": "Unreal Engine Game Jam", "desc": "My first game jam project.", "img": "img/gamejamgame.gif" },
+      { "title": "Shader Study", "desc": "Creating unique shaders using Unity Shader Graph.", "img": "img/Shader.gif" },
+      { "title": "Sword Scroller", "desc": "A game jam game where you could only use 1 input.", "img": "img/SwordScroller.gif" },
+      { "title": "VR Painting", "desc": "My first ever VR project.", "img": "img/VrPainting.gif" }
+    ],
+    "intro": {
+      "title": "Hey, I'm Zakaria 👋",
+      "subtitle": "A software / game developer who loves creating random things",
+      "button": "Explore My Work"
+    },
+    "about": {
+      "title": "About Me",
+      "subtitle": "Get to know me a little better!",
+      "text": "My name is Zakaria, a 21-year-old passionate gamedeveloper. I always loved playing games and I have always wondered how they were made. I love studying, learning new skills and expanding my knowledge in general. After I graduate I want to continue studying and getting my bachelor in Robotics. I was inspired by one of the projects that I worked on and it changed my vision on how technology is able to improve the lives of people with diverse abilities.",
+      "button": "COMING SOON"
+    },
+    "projects": {
+      "title": "My Projects",
+      "subtitle": "Some of my favorite work",
+      "button": "COMING SOON"
+    },
+    "contact": {
+      "title": "Contact Me",
+      "subtitle": "Let's connect!",
+      "text": "Reach out via social media or email. Feel free to check out my github for all of my amazing projects!"
+    }
+  }
+}
