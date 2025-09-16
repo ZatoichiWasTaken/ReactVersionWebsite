@@ -1,31 +1,266 @@
 {
   "en": {
     "heroSlides": [
-      { "title": "Unreal Engine Game Jam", "desc": "My first game jam project.", "img": "img/gamejamgame.gif" },
-      { "title": "Shader Study", "desc": "Creating unique shaders using Unity Shader Graph.", "img": "img/Shader.gif" },
-      { "title": "Sword Scroller", "desc": "A game jam game where you could only use 1 input.", "img": "img/SwordScroller.gif" },
-      { "title": "VR Painting", "desc": "My first ever VR project.", "img": "img/VrPainting.gif" }
+      {
+        "title": "Unreal Engine Game Jam",
+        "desc": "My first game jam project.",
+        "img": "img/gamejamgame.gif"
+      },
+      {
+        "title": "Shader Study",
+        "desc": "Unique shaders created using Unity Shader Graph.",
+        "img": "img/Shader.gif"
+      },
+      {
+        "title": "Sword Scroller",
+        "desc": "A game jam game where you could only use 1 input.",
+        "img": "img/SwordScroller.gif"
+      },
+      {
+        "title": "VR Painting",
+        "desc": "My first VR project.",
+        "img": "img/VrPainting.gif"
+      }
     ],
     "intro": {
-      "title": "Hey, I'm Zakaria 👋",
-      "subtitle": "A software / game developer who loves creating random things",
-      "button": "Explore My Work"
+      "title": "Hey, I’m Zakaria 👋",
+      "subtitle": "A software- and gamedeveloper who loves making all kinds of projects",
+      "button": "Take a look"
     },
     "about": {
       "title": "About Me",
       "subtitle": "Get to know me a little better!",
-      "text": "My name is Zakaria, a 21-year-old passionate gamedeveloper. I always loved playing games and I have always wondered how they were made. I love studying, learning new skills and expanding my knowledge in general. After I graduate I want to continue studying and getting my bachelor in Robotics. I was inspired by one of the projects that I worked on and it changed my vision on how technology is able to improve the lives of people with diverse abilities.",
-      "button": "COMING SOON"
+      "text": "I am Zakaria, a 21-year-old software / gamedeveloper. I have always loved playing games and wondered how they were made. I enjoy studying, learning new skills, and expanding my knowledge. After my studies, I want to continue and get my master’s in Robotics. A project I worked on changed my vision of how technology can improve the lives of people with diverse abilities.",
+      "button": "Read More"
+    },
+    "about_full": {
+      "title": "About Me",
+      "subtitle": "My full story",
+      "text": "My name is Zakaria El Ghoul Aadi. I am 22 years old and I live in Amsterdam.\n\nBefore I started this study, I studied HBO Mechatronics. It was a fun program, but the workload was enormous (about 70 hours per week). Before that, I studied Software / Gamedevelopment at MBO.\n\nIn my free time, I build computers for friends and content creators. I also work on developing my own games and software. In addition, I game, do music production, and occasionally skateboard.\n\nI work at DB Schenker as a transport planner. Unfortunately, I cannot say much about it by email due to a non-disclosure agreement. But it is a fun job with a lot of puzzle-solving and critical thinking.\n\nExamples include: For the Royal Navy, we developed a game as a group so they could recruit more people during fairs. My responsibilities for that project included documentation, project management, programming the logic, and optimization. We also developed a program that helped blind golfer Ronald Boef become more independent. The project was a prototype to support people with disabilities. The result was shown in a NOS news report. It was an interesting and challenging assignment where we had to apply new technology to turn limitations into possibilities.\n\nI immediately knew this study suited me. It is a good addition to what I have learned so far, and I look forward to broadening my knowledge and taking on new challenges. I also hope to improve my skills and learn a lot about the IT world. I find everything related to technology and IT fascinating."
     },
     "projects": {
       "title": "My Projects",
-      "subtitle": "Some of my favorite work",
-      "button": "COMING SOON"
+      "subtitle": "My favorite work",
+      "button": "COMING SOON",
+      "items": [
+        {
+          "title": "Game Jam",
+          "desc": "Unreal Engine game jam project",
+          "img": "img/gamejamgame.gif",
+          "link": "#"
+        },
+        {
+          "title": "Shader Study",
+          "desc": "Realtime shader experiments",
+          "img": "img/Shader.gif",
+          "link": "#"
+        },
+        {
+          "title": "Sword Scroller",
+          "desc": "2D sword platformer",
+          "img": "img/SwordScroller.gif",
+          "link": "#"
+        },
+        {
+          "title": "VR Painting",
+          "desc": "Unreal Engine VR painting project",
+          "img": "img/VrPainting.gif",
+          "link": "#"
+        }
+      ]
     },
     "contact": {
       "title": "Contact Me",
-      "subtitle": "Let's connect!",
-      "text": "Reach out via social media or email. Feel free to check out my github for all of my amazing projects!"
+      "subtitle": "Let’s grab a coffee!",
+      "text": "Send me a message via social media or email. Feel free to check out my GitHub for more projects!"
+    },
+    "hobbies": {
+      "title": "Hobbies",
+      "subtitle": "My passions",
+      "items": [
+        {
+          "icon": "",
+          "title": "Skating",
+          "desc": "Thankfully haven’t broken anything yet."
+        },
+        {
+          "icon": "",
+          "title": "Gaming",
+          "desc": "I’ve been gaming since I was 3."
+        },
+        {
+          "icon": "",
+          "title": "Watching Anime",
+          "desc": "‘Sakamoto Days is a 10/10.’ – My mom."
+        },
+        {
+          "icon": "",
+          "title": "TCGs",
+          "desc": "My poor bank account is completely drained by trading card games."
+        },
+        {
+          "icon": "",
+          "title": "Music",
+          "desc": "I love listening, but I also produce. Still learning how to play guitar."
+        },
+        {
+          "icon": "",
+          "title": "Programming",
+          "desc": "I sometimes make fun little projects."
+        },
+        {
+          "icon": "",
+          "title": "Reading",
+          "desc": "Friedrich Nietzsche is definitely worth a read."
+        },
+        {
+          "icon": "",
+          "title": "Building Computers",
+          "desc": "If it’s a laptop, I can fix that too."
+        },
+        {
+          "icon": "",
+          "title": "Drawing",
+          "desc": "Still not very good, but working on it."
+        },
+        {
+          "icon": "",
+          "title": "Having too many hobbies",
+          "desc": ""
+        }
+      ]
+    }
+  },
+  "nl": {
+    "heroSlides": [
+      {
+        "title": "Unreal Engine Game Jam",
+        "desc": "Mijn eerste game jam project.",
+        "img": "img/gamejamgame.gif"
+      },
+      {
+        "title": "Shader Studie",
+        "desc": "Unieke shaders gemaakt met Unity Shader Graph.",
+        "img": "img/Shader.gif"
+      },
+      {
+        "title": "Sword Scroller",
+        "desc": "Een game jam spel waarin je maar 1 input kon gebruiken.",
+        "img": "img/SwordScroller.gif"
+      },
+      {
+        "title": "VR Schilderen",
+        "desc": "Mijn eerste VR project.",
+        "img": "img/VrPainting.gif"
+      }
+    ],
+    "intro": {
+      "title": "Hoi, ik ben Zakaria 👋",
+      "subtitle": "Een software- en gamedeveloper die graag allerlei projecten maakt",
+      "button": "Neem een kijkje"
+    },
+    "about": {
+      "title": "Over Mij",
+      "subtitle": "Leer me wat beter kennen!",
+      "text": "Ik ben Zakaria, een 21-jarige softare / gamedeveloper. Ik hield altijd al van gamen en vroeg me vaak af hoe ze werden gemaakt. Ik hou van studeren, nieuwe vaardigheden leren en mijn kennis uitbreiden. Na mijn studie wil ik verder leren en mijn master in Robotica behalen. Een project waar ik aan werkte veranderde mijn visie op hoe technologie het leven van mensen met verschillende mogelijkheden kan verbeteren.",
+      "button": "Lees Meer"
+    },
+    "about_full": {
+      "title": "Over Mij",
+      "subtitle": "Mijn volledige verhaal",
+      "text": "Mijn naam is Zakaria El Ghoul Aadi. Ik ben 22 jaar en ik woon in Amsterdam.\n\nVoordat ik met deze studie begon, had ik HBO Mechatronica gestudeerd. Het was een leuke opleiding, maar de werkdruk was enorm (ongeveer 70 uur per week). Daarvoor had ik Software / Gamedevelopment op het MBO gestudeert.\n\nIn mijn vrije tijd bouw ik computers voor vrienden en content creators. Daarnaast ben ik ook bezig met het ontwikkelen van mijn eigen games, software. Daarnaast game ik, doe ik ook muziek productie en af en toe eventjes skateboarden.\n\nIk werk bij DB Schenker als transportplanner. Helaas kan ik niet veel erover zeggen wegens een non disclosure agreement. Maar het is een leuke baan met veel puzzel en denkwerk.\n\nVoorbeelden hiervan zijn: Voor de Koninklijke Marine hebben wij als groep een game ontwikkelt, zodat de marine tijdens beurzen meer mensen kan recruiten. Mijn verantwoordelijkheden voor dat project waren o.a.: documentatie, projectmanagement, het programmeren van de logica en optimalisatie. Verder hebben wij een programma ontwikkeld waarmee de blinde golfer Ronald Boef zelfstandiger kon zijn. Het project was een prototype waarmee wij ondersteuning kunnen bieden aan mindervaliden. Het resultaat is terug te zien in een NOS reportage. Het was een interessante en uitdagende opdracht, waarbij wij nieuwe technologie moesten toepassen om van een beperking iets onbeperkts te maken.\n\nIk wist vrijwel meteen dat deze opleiding bij mij pastte. Het is een goede aanvulling op wat ik tot nu toe heb geleerd en ik kijk er naar uit om mijn kennis nog meer te verbreden en nieuwe uitdaging aan te gaan. Daarnaast hoop ik dat ik mijn skills kan verbeteren en een hoop kan leren over de IT wereld. Ik vind alles rondom techniek en de IT wereld interessant."
+    },
+    "projects": {
+      "title": "Mijn Projecten",
+      "subtitle": "Mijn favo projecten",
+      "button": "BINNENKORT",
+      "items": [
+        {
+          "title": "Game Jam",
+          "desc": "Unreal Engine game jam project",
+          "img": "img/gamejamgame.gif",
+          "link": "#"
+        },
+        {
+          "title": "Shader Studie",
+          "desc": "Realtime shader experimenten",
+          "img": "img/Shader.gif",
+          "link": "#"
+        },
+        {
+          "title": "Sword Scroller",
+          "desc": "2D zwaard platformspel",
+          "img": "img/SwordScroller.gif",
+          "link": "#"
+        },
+        {
+          "title": "VR Schilderen",
+          "desc": "Unreal Engine VR schilderproject",
+          "img": "img/VrPainting.gif",
+          "link": "#"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Neem Contact Op",
+      "subtitle": "Laten we een bakkie doen!",
+      "text": "Stuur me een bericht via sociale media of e-mail. Bekijk ook gerust mijn GitHub voor meer projecten!"
+    },
+    "hobbies": {
+      "title": "Hobby’s",
+      "subtitle": "Mijn passies",
+      "items": [
+        {
+          "icon": "",
+          "title": "Skaten",
+          "desc": "Heb godzijdank nog niks gebroken."
+        },
+        {
+          "icon": "",
+          "title": "Gamen",
+          "desc": "Ik game al sinds mijn 3de."
+        },
+        {
+          "icon": "",
+          "title": "Anime kijken",
+          "desc": "'Sakamoto Days is een 10/10.' - Mijn moeder."
+        },
+        {
+          "icon": "",
+          "title": "TCG's",
+          "desc": "Mijn arme rekening is compleet leeg door TCG's."
+        },
+        {
+          "icon": "",
+          "title": "Muziek",
+          "desc": "Graag luister ik, maar producen doe ik ook. Ben nog aan het leren hoe ik de gitaar speel."
+        },
+        {
+          "icon": "",
+          "title": "Programmeren",
+          "desc": "Ik maak af en toe wel grappige projecten."
+        },
+        {
+          "icon": "",
+          "title": "Lezen",
+          "desc": "Friedrich Nietzsche is wel een aanrader."
+        },
+        {
+          "icon": "",
+          "title": "Computers Bouwen",
+          "desc": "Als het een laptop is kan ik die ook fixen."
+        },
+        {
+          "icon": "",
+          "title": "Tekenen",
+          "desc": "Kan het nog steeds niet goed, maar we zijn ermee bezig."
+        },
+        {
+          "icon": "",
+          "title": "Te veel hobbies hebben",
+          "desc": ""
+        }
+      ]
     }
   }
 }

@@ -24,10 +24,10 @@ function Navbar({ lang, setLang, languages }) {
         <h1>Zakaria El Ghoul Aadi</h1>
         <div className="nav-right">
           <div className="nav-links">
-            <a href="#intro">Intro</a>
-            <a href="#about">About</a>
-            <a href="#home">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="index.html#intro">Intro</a>
+            <a href="about.html">About</a>
+            <a href="index.html#home">Projects</a>
+            <a href="index.html#contact">Contact</a>
           </div>
           <select className="nav-lang" value={lang} onChange={e => setLang(e.target.value)}>
             {Object.keys(languages).map(l => (
@@ -40,10 +40,10 @@ function Navbar({ lang, setLang, languages }) {
         </div>
       </nav>
       <div className={`burger-menu ${menuOpen ? "open" : ""}`}>
-        <a href="#intro" onClick={() => setMenuOpen(false)}>Intro</a>
-        <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-        <a href="#home" onClick={() => setMenuOpen(false)}>Projects</a>
-        <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+        <a href="index.html#intro" onClick={() => setMenuOpen(false)}>Intro</a>
+        <a href="about.html" onClick={() => setMenuOpen(false)}>About</a>
+        <a href="index.html#home" onClick={() => setMenuOpen(false)}>Projects</a>
+        <a href="index.html#contact" onClick={() => setMenuOpen(false)}>Contact</a>
         <select value={lang} onChange={e => setLang(e.target.value)}>
           {Object.keys(languages).map(l => (
             <option key={l} value={l}>{l.toUpperCase()}</option>
@@ -81,6 +81,7 @@ function AboutMe({ lang, languages }) {
     const obs = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible')
+        else entry.target.classList.remove('visible')
       })
     }, { threshold: 0.2 })
     elems.forEach(el => obs.observe(el))
@@ -94,11 +95,11 @@ function AboutMe({ lang, languages }) {
         <div className="about-content">
           <div className="about-text fade-up">
             <p>{languages[lang].about.text}</p>
-            <button className="btn">{languages[lang].about.button}</button>
+            <a href="about.html"><button className="btn">{languages[lang].about.button}</button></a>
           </div>
           <div className="about-photos fade-up">
-            <div className="about-photo"><img src="img/Zaka.png" alt="Zakaria" /></div>
             <div className="about-photo"><img src="img/Zaka2.png" alt="Zakaria 2" /></div>
+            <div className="about-photo"><img src="img/ZakaSkateboard.png" alt="Zakaria" /></div>
           </div>
         </div>
       </div>
@@ -117,7 +118,7 @@ function HeroCarousel({ slides }) {
     <section id="home">
       {slides.map((slide, i) => (
         <div key={i} className={`carousel-slide ${i === current ? "active" : ""}`}>
-          <img src={slide.img} />
+          <img src={slide.img} alt={slide.title} />
           <div className="carousel-overlay">
             <div className="carousel-content">
               <h1>{slide.title}</h1>
@@ -143,18 +144,14 @@ function HeroCarousel({ slides }) {
 }
 
 function Projects({ lang, languages }) {
-  const projects = [
-    { title: "Game Jam", desc: "Unreal Engine game jam project", img: "img/gamejamgame.gif", link: "#" },
-    { title: "Shader Study", desc: "Real-time shader experiments", img: "img/Shader.gif", link: "#" },
-    { title: "Sword Scroller", desc: "2D sword platformer", img: "img/SwordScroller.gif", link: "#" },
-    { title: "VR Painting", desc: "Unreal Engine VR painting", img: "img/VrPainting.gif", link: "#" },
-  ]
+  const projects = languages[lang].projects.items
 
   React.useEffect(() => {
     const animated = document.querySelectorAll('.card, .section-divider')
     const obs = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible')
+        else entry.target.classList.remove('visible')
       })
     }, { threshold: 0.2 })
     animated.forEach(el => obs.observe(el))
@@ -201,20 +198,7 @@ function App() {
   const [lang, setLang] = React.useState("en")
   const [languages, setLanguages] = React.useState(null)
 
-  React.useEffect(() => {
-    loadLanguages().then(setLanguages)
-  }, [])
-
-  React.useEffect(() => {
-    const dividers = document.querySelectorAll('.section-divider')
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible')
-      })
-    }, { threshold: 0.1 })
-    dividers.forEach(d => obs.observe(d))
-    return () => obs.disconnect()
-  }, [])
+  React.useEffect(() => { loadLanguages().then(setLanguages) }, [])
 
   if (!languages) return <p>Loading...</p>
 
